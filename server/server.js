@@ -18,7 +18,7 @@ app.post('/todos', (req, res) => {
     res.send(doc);
   }, (err) => {
     res.status(400).send(err);
-  })
+  });
 });
 
 app.get('/todos', (req, res) => {
@@ -28,7 +28,7 @@ app.get('/todos', (req, res) => {
     });
   }, (err) => {
     res.status(400).send(err);
-  })
+  });
 });
 
 app.listen(3300, () => {
