@@ -1,9 +1,11 @@
+require('./config/config');
+
 const _ = require('lodash');
 const express = require('express');
 const bodyParser = require('body-parser');
 const { ObjectID } = require('mongodb');
 
-var { mongoose } = require('./db/mongoose.js');
+var { mongoose } = require('./db/mongoose');
 var { Todo } = require('./models/todo');
 var { User } = require('./models/user');
 
@@ -100,8 +102,8 @@ app.patch('/todos/:id', (req, res) => {
   })
 });
 
-app.listen(3300, () => {
-  console.log('Started on port 3300');
+app.listen(process.env.PORT, () => {
+  console.log(`Started on port ${process.env.PORT}`);
 });
 
 module.exports = {
